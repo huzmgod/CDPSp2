@@ -14,3 +14,6 @@ def main():
     os.system("pip3 install -r requirements.txt")
     os.system("export GROUP_NUMBER=46")
     os.system(f"python3 productpage_monolithic {CUSTOM_PORT}")
+
+if __name__ == "__main__":
+    main()
