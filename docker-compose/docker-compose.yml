@@ -6,7 +6,7 @@ services:
     ports:
       - "9080:9080"
     environment:
-      GROUP_NUMBER: "46"
+      GROUP_NUMBER: "tus muertos"
     links:
       - "g46-details:details"
       - "g46-reviews:reviews"
