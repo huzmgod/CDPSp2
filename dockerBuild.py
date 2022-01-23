@@ -1,5 +1,5 @@
 import os
-FOLDER_PATH = "CDPSp2/bookinfo/src/"
+FOLDER_PATH = "CDPSp2/docker-compose/bookinfo/src"
 
 
 def main():
