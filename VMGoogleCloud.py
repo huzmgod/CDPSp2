@@ -12,7 +12,7 @@ def main():
     os.system(f"sudo apt-get {YES} install python3-pip")
     os.system(f"pip3 install -r {FOLDER_PATH}/requirements.txt")
     os.system("export GROUP_NUMBER=46")
-    os.system(f"python3 {FOLDER_PATH}/productpage_monolith {CUSTOM_PORT}")
+    os.system(f"python3 {FOLDER_PATH}/productpage_monolith.py {CUSTOM_PORT}")
 
 if __name__ == "__main__":
     main()
