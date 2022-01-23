@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: g46-product-page
+  name: g46-product-page
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: g46-product-page
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: g46-product-page
+    spec:
+      containers:
+        - env:
+            - name: GROUP_NUMBER
+              value: "46"
+          image: tracert007/productpage
+          name: g46-product-page
+          ports:
+            - containerPort: 9080
+          resources: {}
+      restartPolicy: Always
+status: {}

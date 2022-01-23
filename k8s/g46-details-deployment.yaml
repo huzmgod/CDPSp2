@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: g46-details
+  name: g46-details
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      io.kompose.service: g46-details
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: g46-details
+    spec:
+      containers:
+        - env:
+            - name: ENABLE_EXTERNAL_BOOK_SERVICE
+              value: "true"
+            - name: SERVICE_VERSION
+              value: v1
+          image: tracert007/details 
+          name: g46-details
+          ports:
+            - containerPort: 9080
+          resources: {}
+      restartPolicy: Always
+status: {}
