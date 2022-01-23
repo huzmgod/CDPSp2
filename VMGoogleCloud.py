@@ -16,7 +16,6 @@ def main():
     print("\n Installing app requirements... \n")
     os.system(f"pip3 install -r {FOLDER_PATH}/requirements.txt")
     print("\n Creating GROUP_NUMBER as a environment variable \n")
-    # TODO: Export no funciona desde aquí y no sé por qué
     os.environ['GROUP_NUMBER'] = '46'
     print("\n Configuring firewall to allow http connections with port 4000... \n")
     os.system(f"sudo gcloud compute --project=strong-augury-338916 \
