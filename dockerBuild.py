@@ -11,9 +11,11 @@ def main():
     print("\n Building ratings image ...\n ")
     os.system(f"sudo docker build {FOLDER_PATH}/ratings -t g46/ratings")
     print("\n Compiling gradle...\n ")
+    os.chdir(f"{FOLDER_PATH}/reviews/")
     os.system(f'sudo docker run --rm -u root -v "$(pwd)":/home/gradle/project -w /home/gradle/project gradle:4.8.1 gradle clean build')
     print("\n Building revies image...\n ")
-    os.system(f"sudo docker build {FOLDER_PATH}/reviews/reviews-wlpcfg -t g46/reviews")
+    os.chdir(f"reviews-wlpcfg")
+    os.system(f"sudo docker build . -t g46/reviews")
 
 if __name__ == '__main__':
     main()

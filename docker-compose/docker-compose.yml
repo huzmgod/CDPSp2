@@ -20,14 +20,14 @@ services:
   g46-reviews:
     image: g46/reviews
     environment:
-      SERVICE_VERSION: "v1"
+            #SERVICE_VERSION: "v1"
       
-      # SERVICE_VERSION: "v2"
-      # ENABLE_RATINGS: "true"
+            #SERVICE_VERSION: "v2"
+            #ENABLE_RATINGS: "true"
 
-      # SERVICE_VERSION: "v3"
-      # ENABLE_RATINGS: "true"
-      # STAR_COLOR: "red"
+       SERVICE_VERSION: "v3"
+       ENABLE_RATINGS: "true"
+       STAR_COLOR: "red"
     links:
       - "g46-ratings:ratings"
 
