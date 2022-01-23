@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  g46-product-page:
+    image: g46/product-page
+    ports:
+      - "9080:9080"
+    environment:
+      GROUP_NUMBER: "tus muertos"
+    links:
+      - "g46-details:details"
+      - "g46-reviews:reviews"
+
+  g46-details:
+    image: g46/details
+    environment:
+      SERVICE_VERSION: "v1"
+      ENABLE_EXTERNAL_BOOK_SERVICE: "true"
+
+  g46-reviews:
+    image: g46/reviews
+    environment:
+      SERVICE_VERSION: "v1"
+      
+      # SERVICE_VERSION: "v2"
+      # ENABLE_RATINGS: "true"
+
+      # SERVICE_VERSION: "v3"
+      # ENABLE_RATINGS: "true"
+      # STAR_COLOR: "red"
+    links:
+      - "g46-ratings:ratings"
+
+  g46-ratings:
+    image: g46/ratings
+    environment:
+      SERVICE_VERSION: "v1"

@@ -1,0 +1,10 @@
+FROM node:12.18.1-slim
+
+COPY . /opt/microservices/
+WORKDIR /opt/microservices/
+
+RUN npm install
+
+EXPOSE 9080
+
+CMD ["node", "ratings.js", "9080"]
